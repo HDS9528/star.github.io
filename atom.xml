@@ -2,15 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://HDS9528.github.io</id>
     <title>黑皇</title>
-    <updated>2021-04-07T14:29:50.933Z</updated>
+    <updated>2021-04-07T14:43:37.648Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://HDS9528.github.io"/>
     <link rel="self" href="https://HDS9528.github.io/atom.xml"/>
-    <subtitle>温故而知新
-知识，本该纯粹真实。 不应为乱象而迷失，因避讳而藏掖。</subtitle>
+    <subtitle>知识，本该纯粹真实。 不应为乱象而迷失，因避讳而藏掖。</subtitle>
     <logo>https://HDS9528.github.io/images/avatar.png</logo>
     <icon>https://HDS9528.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 黑皇</rights>
+    <entry>
+        <title type="html"><![CDATA[小站上线的第一天]]></title>
+        <id>https://HDS9528.github.io/IJxvtC-bB/</id>
+        <link href="https://HDS9528.github.io/IJxvtC-bB/">
+        </link>
+        <updated>2021-04-07T14:37:47.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何评价联想公布的「Lenovo One」技术?]]></title>
         <id>https://HDS9528.github.io/ru-he-ping-jie-lian-xiang-gong-bu-de-lenovo-one-ji-zhu/</id>
