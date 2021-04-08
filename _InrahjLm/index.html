@@ -1,0 +1,257 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>我的 HexoBlog 的诞生 | 黑皇</title>
+<link rel="shortcut icon" href="https://HDS9528.github.io/favicon.ico?v=1617891679568">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://HDS9528.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="我的 HexoBlog 的诞生 | 黑皇 - Atom Feed" href="https://HDS9528.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="我的 HexoBlog 的诞生
+本文记录和讲解一下我的 HexoBlog 是如何一步一步被部署至 Github Pages 上的，可供大家参考。部署完成后可参考我的下一篇文章《我的 HexoBlog 的诞生（二）》对自己的 HexoBlog..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://HDS9528.github.io">
+  <img class="avatar" src="https://HDS9528.github.io/images/avatar.png?v=1617891679568" alt="">
+  </a>
+  <h1 class="site-title">
+    黑皇
+  </h1>
+  <p class="site-description">
+    知识，本该纯粹真实。 不应为乱象而迷失，因避讳而藏掖。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/HDS9528" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              我的 HexoBlog 的诞生
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-04-08
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="我的-hexoblog-的诞生">我的 HexoBlog 的诞生</h1>
+<p>本文记录和讲解一下我的 HexoBlog 是如何一步一步被部署至 Github Pages 上的，可供大家参考。部署完成后可参考我的下一篇文章《我的 HexoBlog 的诞生（二）》对自己的 HexoBlog 进行个性化设置和配置，不过在此之前，需阅读<a href="https://hexo.io/zh-cn/docs/"> Hexo 官方文档</a>，对 Hexo 有基本的完整的认识。</p>
+<h3 id="注册自己的-github-账户创建-github-pages">注册自己的 Github 账户，创建 Github Pages</h3>
+<ol>
+<li>进入<a href="http://github.com/"> Github 首页</a>，点击 Sign up 注册，填写 Username 等，验证邮箱，注册成功；</li>
+<li>点击右上角的加号，点击 New repository，填写 Repository name，这里的仓库名建议按照”&lt;自己的 Github 用户名&gt;.github.io“的格式来填，填写 Description，点击 Creat repository，创建 Github Pages 成功；</li>
+</ol>
+<h3 id="安装-nodejs安装-git-和-git-的配置">安装 Node.js，安装 Git 和 Git 的配置</h3>
+<ol>
+<li>进入<a href="https://nodejs.org/zh-cn/"> Node.js 官方网站</a>，点击下载 LTX（Long Term Support）版，我下载的是<a href="https://nodejs.org/download/release/v12.14.0/"> v12.14.0 版本的 msi 安装程序</a>，安装步骤非常简单，一直 next；</li>
+<li>进入<a href="https://git-scm.com/downloads"> Git 官方网站下载页面</a>，选择 Windows 版本的 Git 下载，我下载的是<a href="https://pan.baidu.com/s/1YJxkbnkwx-9x4Hr5Sz4jMQ"> v2.25.0 版本的 exe 安装程序(提取码：u7fp)</a>，<a href="https://blog.ql-isaac.cn/2020/01/24/What-is-Git/#more">安装和配置步骤</a>记录在另一篇文章中；</li>
+</ol>
+<h3 id="安装-hexo">安装 Hexo</h3>
+<ol>
+<li>
+<p>在合适的路径下新建一个文件夹，文件夹名自定义，例如 HexoBlog，作为&lt;存储 HexoBlog 的文件夹&gt;；</p>
+</li>
+<li>
+<p>打开&lt;存储 HexoBlog 的文件夹&gt;，在空白处点鼠标的右键，选择 Git Bash Here 进入终端；</p>
+</li>
+<li>
+<p>安装 cnpm 提高下载速度，以后下载插件都可用 cnpm（即将下载某一个插件的命令中的 npm 改为 cnpm）。在终端输入如下命令，回车，等待 cnpm 下载完成；</p>
+<pre><code>BASH
+npm install -g cnpm --registry=http://registry.npm.taobao.org
+</code></pre>
+</li>
+<li>
+<p>在终端输入如下命令，回车，等待 hexo-cli 下载完成，完成后，可输入<code>hexo -v</code>查看相关版本信息；</p>
+<pre><code>BASH
+cnpm install -g hexo-cli
+</code></pre>
+</li>
+<li>
+<p>在终端输入<code>hexo init</code>，等待，可在&lt;存储 HexoBlog 的文件夹&gt;中看到生成了如下图所示的文件。</p>
+</li>
+</ol>
+<figure data-type="image" tabindex="1"><img src="https://HDS9528.github.io/post-images/1617851231819.png" alt="初始文件" loading="lazy"></figure>
+<p>初始文件</p>
+<h3 id="本地部署我的-hexoblog">本地部署我的 HexoBlog</h3>
+<ol>
+<li>在终端输入<code>hexo s</code>，之后打开浏览器，输入 localhost:4000，可看到本地部署的我的 HexoBlog，表明没什么问题；</li>
+</ol>
+<h3 id="部署至-github-pages">部署至 Github Pages</h3>
+<ol>
+<li>
+<p>安装 Hexo 的 Git 插件。终端输入如下命令，回车，等待下载完成。</p>
+<pre><code>BASH
+cnpm install --save hexo-deployer-git
+</code></pre>
+</li>
+<li>
+<p>编辑 Hexo 的配置文件：</p>
+<pre><code>DIFF
+# 本行为&lt;存储 HexoBlog 的文件夹&gt;\_config.yml 的第 97 行（随着 Hexo 的不断更新，本行对应在你的 _config.yml 中不一定是第 97 行，请以实际情况为准）
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:  
+-  type: ''
+</code></pre>
+<pre><code>DIFF
+# 本行为&lt;存储 HexoBlog 的文件夹&gt;\_config.yml 的第 97 行（随着 Hexo 的不断更新，本行对应在你的 _config.yml 中不一定是第 97 行，请以实际情况为准）
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:  
++  type: git  
++  repo: 
++   github: git@github.com:&lt;自己的 Github 用户名&gt;/&lt;自己的 Github 用户名&gt;.github.io.git,master        
+</code></pre>
+</li>
+<li>
+<p>在终端输入<code>hexo g -d</code>，回车，进行博客的最终操作——生成静态文件后立即部署到 Github Pages 中；</p>
+</li>
+<li>
+<p><a href="https://ql-isaac.github.io/">大功告成</a>（将 ql-isaac 替换成自己的 Github 用户名）。</p>
+</li>
+</ol>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E6%88%91%E7%9A%84-hexoblog-%E7%9A%84%E8%AF%9E%E7%94%9F">我的 HexoBlog 的诞生</a><br>
+*
+<ul>
+<li><a href="#%E6%B3%A8%E5%86%8C%E8%87%AA%E5%B7%B1%E7%9A%84-github-%E8%B4%A6%E6%88%B7%E5%88%9B%E5%BB%BA-github-pages">注册自己的 Github 账户，创建 Github Pages</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-nodejs%E5%AE%89%E8%A3%85-git-%E5%92%8C-git-%E7%9A%84%E9%85%8D%E7%BD%AE">安装 Node.js，安装 Git 和 Git 的配置</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-hexo">安装 Hexo</a></li>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%88%91%E7%9A%84-hexoblog">本地部署我的 HexoBlog</a></li>
+<li><a href="#%E9%83%A8%E7%BD%B2%E8%87%B3-github-pages">部署至 Github Pages</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://HDS9528.github.io/IJxvtC-bB/">
+              <h3 class="post-title">
+                小站上线的第一天
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://HDS9528.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
